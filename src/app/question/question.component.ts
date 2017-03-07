@@ -14,12 +14,7 @@ export class QuestionComponent implements OnInit {
   question:string;
   answerIndex:number;
   questionId:number;
-  seasons = [
-    'Winter',
-    'Spring',
-    'Summer',
-    'Autumn',
-  ];
+
 
   constructor(private questionService:QuestionService) { }
 
@@ -28,6 +23,6 @@ export class QuestionComponent implements OnInit {
   }
 
   onClick(value:string){
-    this.answerIndex=this.seasons.indexOf(value);
+    this.answerIndex=this.currentQuestion.options.indexOf(value);
   }
 }
