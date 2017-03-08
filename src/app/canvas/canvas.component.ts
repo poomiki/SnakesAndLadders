@@ -19,6 +19,10 @@ export class CanvasComponent implements AfterViewInit {
    }
 
   ngAfterViewInit() {
+
+  }
+  
+  public Moveto(To:number){
     let canvas = this.myCanvas.nativeElement;
     this.context = canvas.getContext("2d");
     this.element = this.img.nativeElement;
@@ -38,5 +42,6 @@ export class CanvasComponent implements AfterViewInit {
   }
   }, 1000,ctx,el,x,canvas);
   }
-  
+
+
 }

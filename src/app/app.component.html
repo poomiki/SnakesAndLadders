@@ -3,11 +3,11 @@
   </div>
   <div class="row">
         <div class="col-md-7">
-            <app-canvas></app-canvas>
+            <app-canvas #appCanvas></app-canvas>
         </div>
         <div class="col-md-5" >
             <div class="row">
-            <app-dice></app-dice>
+            <app-dice (msgEvent)="appCanvas.Moveto($event)"></app-dice>
             </div>
             <div class="row">
             <app-question></app-question>

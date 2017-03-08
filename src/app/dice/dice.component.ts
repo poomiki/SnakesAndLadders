@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dice',
@@ -11,5 +11,11 @@ export class DiceComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
+  @Output() msgEvent = new EventEmitter<number>(); 
+  OnClick(){
+    alert("clicked");
+    this.msgEvent.emit(5);
+  }
+  
 }
