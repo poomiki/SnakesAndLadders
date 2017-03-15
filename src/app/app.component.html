@@ -2,10 +2,10 @@
       <app-header></app-header>
   </div>
   <div class="row">
-        <div class="col-md-7">
-            <app-canvas #appCanvas></app-canvas>
+        <div class="col-md-6">
+            <app-canvas #appCanvas [Canvaswidth]="400" [Canvasheight]="400" [Canvassize]="10"></app-canvas>
         </div>
-        <div class="col-md-5" >
+        <div class="col-md-6" >
             <div class="row">
             <app-dice (msgEvent)="appCanvas.Moveto($event)"></app-dice>
             </div>

@@ -1,11 +1,30 @@
 <div class="panel panel-default" style="text-align: center">
-    
-<h1>קוביית המזל</h1>
-    <div class="panel-body">
-      <div class="button-row">
-      <button (click)="OnClick()" md-fab><md-icon>check</md-icon></button>
-      <img src="http://combiboilersleeds.com/images/dice/dice-1.jpg"/>
-      </div>
-    </div>
+ <div class="button-row">   
+<button md-raised-button (click)="OnClick()">{{btnText}}</button>
+ </div>
+<div class="die eyes-{{value}} visible-{{visible}}" (click)="roll()">
+	<svg viewBox="-2.2 -2.2 4.4 4.4">
+		<defs>
+			<circle id="oog" cx="0" cy="0" r="0.4"/>
+		</defs>
+
+		<rect x="-2" y="-2" width="4" height="4" rx="0" ry="0" 
+			style="fill:#feffe1;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:.001"/>
+		
+		<use x="0" y="0" xlink:href="#oog" class="odd" />
+		<g class="pair1">
+			<use x="-1" y="-1" xlink:href="#oog" />
+			<use x="1" y="1" xlink:href="#oog" />
+		</g>
+		<g class="pair2">
+			<use x="1" y="-1" xlink:href="#oog" />
+			<use x="-1" y="1" xlink:href="#oog" />
+		</g>
+		<g class="pair3">
+			<use x="-1" y="0" xlink:href="#oog" />
+			<use x="1" y="0" xlink:href="#oog" />
+		</g>
+	</svg>
+</div>
     
 </div>

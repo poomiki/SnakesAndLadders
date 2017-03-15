@@ -1,4 +1,4 @@
-import { Component, AfterViewInit,ViewChild } from '@angular/core';
+import { Component, AfterViewInit,ViewChild,Input } from '@angular/core';
 
 @Component({
   selector: 'app-canvas',
@@ -10,7 +10,13 @@ export class CanvasComponent implements AfterViewInit {
    @ViewChild("myCanvas") myCanvas;
    @ViewChild('img') img;
    src: string;
-
+   @Input()
+   Canvaswidth:number;
+   @Input()
+   Canvasheight:number;
+   @Input()
+   Canvassize:number;
+   currentLocation:number=0;
    context:CanvasRenderingContext2D;
    element: HTMLImageElement;
    x: number;  
@@ -22,7 +28,12 @@ export class CanvasComponent implements AfterViewInit {
 
   }
   
+  private calcLocation(For:number){
+   let boxW=this.Canvaswidth/this.Canvassize;
+   let BoxH=this.Canvasheight/this.Canvassize;
+  }
   public Moveto(To:number){
+    //alert(To);
     let canvas = this.myCanvas.nativeElement;
     this.context = canvas.getContext("2d");
     this.element = this.img.nativeElement;
